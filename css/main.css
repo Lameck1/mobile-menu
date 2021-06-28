@@ -438,8 +438,9 @@ textarea {
 
 #nav-mobile ul li {
   font-weight: 700;
-  padding: 20px 0;
+  padding: 20px 0 20px 20px;
   border-bottom: 1px solid #6f6c6b;
+  text-align: left;
 }
 
 #nav-mobile ul li a {
