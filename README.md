@@ -4,4 +4,4 @@ This project builds on an existing codebase on a portfolio project. The main aim
 
 Application is based on this [Figma design](https://www.figma.com/file/t3EJUCAEViw3QasuJLPLVT/Microverse-Student-Potfolio-Templates-Main?node-id=1%3A1471).
 
-## [Live Demo](https://github.com/Lameck1/mobile-menu/settings/pages)
+## [Live Demo](https://lameck1.github.io/mobile-menu/)
