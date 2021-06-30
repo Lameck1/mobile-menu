@@ -27,7 +27,8 @@ header {
   color: white;
 }
 
-#desktop-nav, #desktop-nav ul {
+#desktop-nav,
+#desktop-nav ul {
   display: none;
 }
 
@@ -37,18 +38,6 @@ header {
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
-}
-
-.menu-bars {
-  background: transparent;
-  border: none;
-  outline: none;
-}
-
-.menu-bars i {
-  width: 18px;
-  height: 12px;
-  color: white;
 }
 
 main {
@@ -411,9 +400,101 @@ textarea {
   align-items: center;
   justify-content: space-around;
   padding: 5vh;
-  filter:
-    invert(67%) sepia(46%) saturate(986%) hue-rotate(179deg)
-    brightness(92%) contrast(82%);
+  filter: invert(67%) sepia(46%) saturate(986%) hue-rotate(179deg) brightness(92%) contrast(82%);
+}
+
+#nav-mobile {
+  font-family: "Roboto", sans-serif;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  will-change: transform;
+  z-index: 997;
+  background: #3c3a39;
+  transition: all 0.7s ease;
+}
+
+#nav-mobile ul {
+  padding: 0 20px;
+}
+
+#nav-mobile ul li {
+  font-weight: 700;
+  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid #6f6c6b;
+  text-align: left;
+}
+
+#nav-mobile ul li a {
+  color: #fff5e1;
+  font-size: 1.4rem;
+}
+
+#nav-mobile.is-active {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.menu-bars {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  transform: rotate(0deg);
+  transition: 0.7s ease-in-out;
+  z-index: 1000;
+}
+
+.menu-bars span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  background: #fff;
+  border-radius: 3px;
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+
+.menu-bars span:nth-child(1) {
+  top: 12px;
+  transform-origin: left center;
+}
+
+.menu-bars span:nth-child(2) {
+  top: 23px;
+  transform-origin: left center;
+}
+
+.menu-bars span:nth-child(3) {
+  top: 34px;
+  transform-origin: left center;
+}
+
+.menu-bars.is-active span {
+  background: #fff;
+}
+
+.menu-bars.is-active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 12px;
+  left: 9px;
+}
+
+.menu-bars.is-active span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.menu-bars.is-active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 33px;
+  left: 9px;
 }
 
 @media all and (min-width: 720px) {
@@ -482,7 +563,9 @@ textarea {
   }
 
   .cards-list {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
   }
 
