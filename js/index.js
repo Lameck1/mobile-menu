@@ -4,6 +4,7 @@ const navItems = document.querySelectorAll('.nav-item');
 
 bars.addEventListener('click', () => {
   navMobile.classList.toggle('is-active');
+  bars.classList.toggle('is-active');
 });
 
 bars.addEventListener('keyup', (event) => {
@@ -16,5 +17,6 @@ bars.addEventListener('keyup', (event) => {
 navItems.forEach((navItem) => {
   navItem.addEventListener('click', () => {
     navMobile.classList.remove('is-active');
+    bars.classList.toggle('is-active');
   });
 });
