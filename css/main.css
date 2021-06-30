@@ -40,19 +40,6 @@ header {
   line-height: 24px;
 }
 
-.menu-bars {
-  background: transparent;
-  border: none;
-  outline: none;
-  z-index: 1000;
-}
-
-.menu-bars i {
-  width: 18px;
-  height: 12px;
-  color: white;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -451,6 +438,63 @@ textarea {
 #nav-mobile.is-active {
   -webkit-transform: translateX(0);
   transform: translateX(0);
+}
+
+.menu-bars {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  transform: rotate(0deg);
+  transition: 0.7s ease-in-out;
+  z-index: 1000;
+}
+
+.menu-bars span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  background: #fff;
+  border-radius: 3px;
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+
+.menu-bars span:nth-child(1) {
+  top: 12px;
+  transform-origin: left center;
+}
+
+.menu-bars span:nth-child(2) {
+  top: 23px;
+  transform-origin: left center;
+}
+
+.menu-bars span:nth-child(3) {
+  top: 34px;
+  transform-origin: left center;
+}
+
+.menu-bars.is-active span {
+  background: #fff;
+}
+
+.menu-bars.is-active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 12px;
+  left: 9px;
+}
+
+.menu-bars.is-active span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.menu-bars.is-active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 33px;
+  left: 9px;
 }
 
 @media all and (min-width: 720px) {
